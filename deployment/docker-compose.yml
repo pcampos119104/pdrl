@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    volumes:
+      - ..:/app
+    env_file:
+      - ../.env
+    command: python src/main.py
+    depends_on:
+      - ollama  # Assuming Ollama is running locally, but if in compose, add service
+
+# Note: Ollama should run separately or add as service:
+# ollama:
+#   image: ollama/ollama
+#   ports:
+#     - "11434:11434"

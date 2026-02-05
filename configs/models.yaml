@@ -1,0 +1,7 @@
+# models.yaml
+# Configuration for LLM models
+ollama:
+  model: "llama3.2"
+  base_url: "http://localhost:11434"
+  temperature: 0.15
+  max_tokens: 1000

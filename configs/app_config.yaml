@@ -1,0 +1,12 @@
+# app_config.yaml
+# Main application configuration
+defaults:
+  - models: ollama
+  - prompts: prompts
+
+app:
+  debug: true
+  timeout: 30
+  paths:
+    data: "./data"
+    logs: "./logs"

@@ -1,0 +1,4 @@
+# templates.yaml
+# Additional prompt templates
+recipe_system: "You are a chef assistant."
+recipe_user: "Create a recipe for {item}."
