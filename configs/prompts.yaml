@@ -1,6 +1,0 @@
-# prompts.yaml
-# Prompt templates
-system:
-  recipe_generator: "You are a helpful assistant that generates recipes based on user inputs."
-user:
-  ask_recipe: "Generate a recipe for {dish} with {ingredients}."

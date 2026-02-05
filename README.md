@@ -1,6 +1,6 @@
 # PDRL
 
-A Python project using LangChain and LangGraph with Ollama for AI-powered recipe generation.
+A Python project using LangChain and LangGraph with Ollama for AI-powered recipe processing, migrating from CrewAI workflow.
 
 ## Setup
 
@@ -17,14 +17,14 @@ A Python project using LangChain and LangGraph with Ollama for AI-powered recipe
 
 ## Run Locally
 
-Run the main application:
+Run the main application with default recipe:
 ```bash
 python src/main.py
 ```
 
-Override configs via CLI:
+Override recipe text via CLI:
 ```bash
-python src/main.py app.debug=false models.temperature=0.5
+python src/main.py app.receita_texto="Nova receita aqui"
 ```
 
 ## Development with Docker Compose
@@ -47,3 +47,4 @@ To migrate to Django:
 - Create Django project: `django-admin startproject pdrl_django .`
 - Move LangChain/LangGraph logic into Django views or management commands.
 - Use Django's settings for configs instead of Hydra.
+- Integrate recipe processing as API endpoints.

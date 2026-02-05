@@ -8,7 +8,8 @@ from src.graphs.recipe_graph import create_recipe_graph
 @hydra.main(config_path="../configs", config_name="app_config", version_base=None)
 def main(cfg: DictConfig):
     # Validate configs with Pydantic
-    llm_config = LLMConfig(**cfg.models)
+    print(cfg.app)
+    llm_config = LLMConfig(**cfg.models.ollama)
     app_config = AppConfig(**cfg.app)
 
     # Create LLM instance
@@ -19,13 +20,23 @@ def main(cfg: DictConfig):
     )
 
     # Create and run the graph
-    graph = create_recipe_graph(llm)
+    graph = create_recipe_graph(llm, cfg.agents)
     result = graph.invoke(
-        {"dish": "pasta", "ingredients": "tomato, basil, garlic", "recipe": ""}
+        {
+            "receita_texto": app_config.receita_texto,
+            "ingredientes": "",
+            "titulo_receita": "",
+            "descricao_receita": "",
+            "modo_preparo": "",
+            "tags": "",
+            "ingredientes_convertidos": "",
+            "imagem_path": "",
+            "receita_final_md": "",
+        }
     )
 
-    print("Generated Recipe:")
-    print(result["recipe"])
+    print("Processed Recipe:")
+    print(result["receita_final_md"])
 
 
 if __name__ == "__main__":

@@ -218,3 +218,4 @@ __marimo__/
 # PDRL specific
 data/
 logs/
+outputs/

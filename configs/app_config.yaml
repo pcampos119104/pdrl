@@ -1,8 +1,9 @@
 # app_config.yaml
 # Main application configuration
 defaults:
-  - models: ollama
-  - prompts: prompts
+  - models: llama3_1
+  - agents: prompts
+  - _self_
 
 app:
   debug: true
@@ -10,3 +11,28 @@ app:
   paths:
     data: "./data"
     logs: "./logs"
+  receita_texto: |
+        Bolo de Cenoura com Farinha de Aveia
+
+        15 Minutos Preparo
+
+            25 Porções
+
+        Lista de ingredientes
+
+            2 cenouras descascadas e cortadas em rodelas
+            ½ xícara (chá) de óleo
+            3 ovos
+            2 xícaras (chá) de açúcar
+            2 ½ xícaras (chá) de Farinha de Aveia Yoki
+            1 colher (sopa) de Fermento em Pó
+            ½ xícara (chá) de nozes picadas
+
+        Preparação
+
+            Bata no liquidificador a cenoura, o óleo e os ovos.
+            Retire a mistura do liquidificador e coloque em uma vasilha.
+            Acrescente o açúcar, a farinha de aveia, o fermento e as nozes picadas. Mexa delicadamente a receita de bolo de cenoura simples.
+            Unte e enfarinhe uma assadeira retangular média.
+            Coloque a massa do bolo de cenoura na assadeira e leve ao forno preaquecido a 200°C por 45 minutos ou até dourar.
+            Agora você já sabe como fazer bolo de cenoura simples!
